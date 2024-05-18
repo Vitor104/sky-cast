@@ -1,0 +1,40 @@
+.container {
+    height: 10em;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecastContainer {
+    height: 8em;
+    width: 17em;
+    background-color: #9CA48D;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.forecastModule {
+    height: 5em;
+    width: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 0.2em;
+}
+
+.weatherImage {
+    height: 2em;
+    width: 2em;
+    margin: 0 auto;
+}
+
+.hourandtemp {
+    font-size: 8px;
+}
