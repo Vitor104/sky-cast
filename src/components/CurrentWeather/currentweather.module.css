@@ -1,0 +1,36 @@
+.container {
+    height: 25em;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 3px solid white;
+}
+
+.todaydate {
+    background-color: #9CA48D;
+    padding: 0.5em;
+    border-radius: 20px;
+}
+
+.logo {
+    height: 5em;
+    width: 5em;
+}
+
+.location {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.place {
+    font-size: 15px;
+}
+
+.temperature {
+    font-size: 35px;
+}
