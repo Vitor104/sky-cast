@@ -30,10 +30,6 @@
     border-radius: 10px;
 }
 
-.inputField:active {
-    border: 1px solid white;
-}
-
 .logo {
     height: 2em;
 }
@@ -41,4 +37,22 @@
 .name {
     font-size: 18px;
     color: #D9DCDF;
+}
+
+.inputFieldModule {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.button {
+    height: 2em;
+    width: 5em;
+    border: none;
+    border-radius: 10px;
+}
+
+.inputField, .button:active {
+    border: 1px solid rgb(0, 0, 0);
 }
