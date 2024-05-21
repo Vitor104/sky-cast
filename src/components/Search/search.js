@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from './search.module.css';
 
 function Search (props) {
+
+    const API = {
+        key: "99600cffaca177235cff252ce19ca928",
+        base: "https://api.openweathermap.org/data/2.5/",
+      }
+
+    const [searchLocation, setSearchLocation] = useState(null);
+    const searchPressed = () => {
+        console.log(searchLocation);
+    }
+
     return (
         <div className={styles.searchmodule}>
             <article className={styles.logomodule}>
@@ -10,8 +21,19 @@ function Search (props) {
             </article>
             <section className={styles.inputFieldModule}>
 
-                <input type="text" className={styles.inputField} placeholder="Search"></input>
-                <button className={styles.button} type="submit">Search</button>
+                <input 
+                type="text" 
+                className={styles.inputField} 
+                placeholder="Search"
+                onChange={(e) => setSearchLocation(e.target.value)}
+                >                    
+                </input>
+
+                <button 
+                className={styles.button} 
+                type="submit"
+                onClick={searchPressed}
+                >Search</button>
 
             </section>
         </div>

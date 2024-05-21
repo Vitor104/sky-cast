@@ -6,17 +6,13 @@ import Forecast from '../Forecast/forecast';
 import imageStorm from '../storm.png';
 
 function App() {
-  const [currentLocation, setLocation] = useState([
-    {
-      location: "Rio de Janeiro",
-      temperature: "15º",
-      image: {imageStorm},
-    },
-  ]);
+
+  
+
 
   return (
     <div className="App">
-      <Search currentLocation={currentLocation} />
+      <Search  />
       <CurrentWeather />
       <Forecast />
     </div>
