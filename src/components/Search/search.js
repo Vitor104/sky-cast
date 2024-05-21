@@ -9,8 +9,14 @@ function Search (props) {
       }
 
     const [searchLocation, setSearchLocation] = useState(null);
+    const [weather, setWeather] = useState({});
+
     const searchPressed = () => {
-        console.log(searchLocation);
+        fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
+        .then(res => res.json())
+        .then(result => {
+            setWeather(result)
+        })
     }
 
     return (
