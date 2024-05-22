@@ -1,24 +1,11 @@
 import React, {useState} from "react";
 import styles from './search.module.css';
+import CurrentWeather from "../CurrentWeather/currentweather";
+
 
 function Search (props) {
 
-    const API = {
-        key: "99600cffaca177235cff252ce19ca928",
-        base: "https://api.openweathermap.org/data/2.5/",
-      }
-
-    const [searchLocation, setSearchLocation] = useState(null);
-    const [weather, setWeather] = useState({});
-
-    const searchPressed = () => {
-        fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
-        .then(res => res.json())
-        .then(result => {
-            setWeather(result)
-        })
-    }
-
+    
     return (
         <div className={styles.searchmodule}>
             <article className={styles.logomodule}>
@@ -31,14 +18,14 @@ function Search (props) {
                 type="text" 
                 className={styles.inputField} 
                 placeholder="Search"
-                onChange={(e) => setSearchLocation(e.target.value)}
+                onChange={props.onChange}
                 >                    
                 </input>
 
                 <button 
                 className={styles.button} 
                 type="submit"
-                onClick={searchPressed}
+                onClick={props.buttonPressed}
                 >Search</button>
 
             </section>

@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className="App">
-      <Search  />
       <CurrentWeather />
       <Forecast />
     </div>

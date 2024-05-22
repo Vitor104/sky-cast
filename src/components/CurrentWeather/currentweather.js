@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './currentweather.module.css';
 import imageSun from '../sun.png';
 import Search from "../Search/search";
+
+
+
+ 
+
 
 function CurrentWeather(props) {
     let currentDate = new Date();
@@ -10,8 +15,29 @@ function CurrentWeather(props) {
     let currentDay = currentDate.getDate();
     let formattedDate = currentDay + "-" + currentMonth + "-" + currentYear;
 
+    const API = {
+        key: "99600cffaca177235cff252ce19ca928",
+        base: "https://api.openweathermap.org/data/2.5/",
+      }
+
+    const [searchLocation, setSearchLocation] = useState(null);
+    const [weather, setWeather] = useState({});
+
+    const searchPressed = () => {
+        fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
+        .then(res => res.json())
+        .then(result => {
+            console.log(result)
+            setWeather(result)
+        });
+    };
+
+
+
     return (
         <main className={styles.container}>
+
+            <Search onChange={(e) => setSearchLocation(e.target.value)} buttonPressed={searchPressed}/>
 
             <p className={styles.todaydate}>{formattedDate}</p>
 
@@ -19,8 +45,8 @@ function CurrentWeather(props) {
 
             <section className={styles.location}>
 
-                <h3 className={styles.place}>{props.weather.name}, <br></br> Canada</h3>
-                <h2 className={styles.temperature}>21º</h2>
+                <h3 className={styles.place}>{weather.name}, <br></br>{weather.sys.country}</h3>
+                <h2 className={styles.temperature}>{weather.main.temp}º</h2>
 
             </section>
 
