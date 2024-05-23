@@ -20,14 +20,18 @@ function CurrentWeather(props) {
         base: "https://api.openweathermap.org/data/2.5/",
       }
 
-    const [searchLocation, setSearchLocation] = useState(null);
+
+      
+    const [searchLocation, setSearchLocation] = useState(null);   
+    
+    
     const [weather, setWeather] = useState({});
+    console.log(weather);
 
     const searchPressed = () => {
         fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
         .then(res => res.json())
         .then(result => {
-            console.log(result)
             setWeather(result)
         });
     };
@@ -35,23 +39,26 @@ function CurrentWeather(props) {
 
 
     return (
-        <main className={styles.container}>
+        <main className={styles.container}>            
+                
+                <Search buttonPressed={searchPressed} onChange={(e) => setSearchLocation(e.target.value)} />
 
-            <Search onChange={(e) => setSearchLocation(e.target.value)} buttonPressed={searchPressed}/>
+                <p className={styles.todaydate}>{formattedDate}</p>
+    
+                <img src={weather.weather && weather.weather.icon} className={styles.logo}></img>
+    
+                <section className={styles.location}>
+    
+                    <h3 className={styles.place}>{weather && weather.name}, <br></br>{weather.sys && weather.sys.country}</h3>
+                    <h2 className={styles.temperature}>{weather.main && weather.main.temp}º</h2>
+    
+                </section>       
 
-            <p className={styles.todaydate}>{formattedDate}</p>
-
-            <img src={imageSun} className={styles.logo}></img>
-
-            <section className={styles.location}>
-
-                <h3 className={styles.place}>{weather.name}, <br></br>{weather.sys.country}</h3>
-                <h2 className={styles.temperature}>{weather.main.temp}º</h2>
-
-            </section>
-
+            
         </main>
     )
 }
 
 export default CurrentWeather;
+
+//{(e) => setSearchLocation(e.target.value)}
