@@ -36,23 +36,29 @@ function CurrentWeather(props) {
         });
     };
 
+    const icon = weather.weather && weather.weather[0].icon;
+    const iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
 
 
     return (
-        <main className={styles.container}>            
-                
-                <Search buttonPressed={searchPressed} onChange={(e) => setSearchLocation(e.target.value)} />
+        <main className={styles.container}>      
 
-                <p className={styles.todaydate}>{formattedDate}</p>
-    
-                <img src={weather.weather && weather.weather.icon} className={styles.logo}></img>
-    
-                <section className={styles.location}>
-    
-                    <h3 className={styles.place}>{weather && weather.name}, <br></br>{weather.sys && weather.sys.country}</h3>
-                    <h2 className={styles.temperature}>{weather.main && weather.main.temp}º</h2>
-    
-                </section>       
+                
+                    <Search buttonPressed={searchPressed} onChange={(e) => setSearchLocation(e.target.value)} />
+
+                    <p className={styles.todaydate}>{formattedDate}</p>
+        
+                    <img src={iconURL} className={styles.logo}></img>
+        
+                    <section className={styles.location}>
+        
+                        <h3 className={styles.place}>{weather && weather.name}, <br></br>{weather.sys && weather.sys.country}</h3>
+                        <h2 className={styles.temperature}>{weather.main && weather.main.temp}º</h2>
+        
+                    </section>   
+                  
+                
+                    
 
             
         </main>
