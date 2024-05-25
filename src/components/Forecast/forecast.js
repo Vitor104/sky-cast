@@ -7,6 +7,12 @@ import imageCloudy from '../cloudy.png';
 
 function Forecast() {
     
+    const API = {
+        key: "99600cffaca177235cff252ce19ca928",
+        base: "http://api.openweathermap.org/data/2.5/forecast",
+      }
+
+
     return (
         <div className={styles.container}>
             <section className={styles.forecastContainer}>

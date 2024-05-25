@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <CurrentWeather />
       <Forecast />
-    </div>
+      </div>
   );
 }
 
