@@ -7,7 +7,10 @@ import imageStorm from '../storm.png';
 
 function App() {
 
-  
+  const API = {
+    key: "99600cffaca177235cff252ce19ca928",
+    base: "http://api.openweathermap.org/data/2.5/",
+  }
 
 
   return (
