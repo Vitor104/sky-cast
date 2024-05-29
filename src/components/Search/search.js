@@ -25,7 +25,7 @@ function Search (props) {
                 <button 
                 className={styles.button} 
                 type="submit"
-                onClick={props.buttonPressed}
+                onClick={props.buttonPressedSearch}
                 >Search</button>
 
             </section>

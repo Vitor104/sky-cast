@@ -10,56 +10,29 @@ import Forecast from "../Forecast/forecast";
 
 
 function CurrentWeather(props) {
-    let currentDate = new Date();
-    let currentYear = currentDate.getFullYear();
-    let currentMonth = currentDate.getMonth() + 1; 
-    let currentDay = currentDate.getDate();
-    let formattedDate = currentDay + "-" + currentMonth + "-" + currentYear;
 
-    const API = {
-        key: "99600cffaca177235cff252ce19ca928",
-        base: "https://api.openweathermap.org/data/2.5/",
-      }
-
-
-      
-    const [searchLocation, setSearchLocation] = useState(null);   
+    const { searchL, setSearchL } = props;
     
-    
-    const [weather, setWeather] = useState({});
-    console.log(weather);
-
-    const searchPressed = () => {
-        fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
-        .then(res => res.json())
-        .then(result => {
-            setWeather(result)
-        });
-    };
-
-    const icon = weather.weather && weather.weather[0].icon;
-    const iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
-
 
     return (
         <main className={styles.container}>      
 
-                
-                    <Search buttonPressed={searchPressed} onChange={(e) => setSearchLocation(e.target.value)} />
 
-                    <p className={styles.todaydate}>{formattedDate}</p>
+                    <Search buttonPressedSearch={props.buttonPressed} 
+                    onChange={(e) => setSearchL (e.target.value)} 
+                    />
+
+                    <p className={styles.todaydate}>{props.date}</p>
         
-                    <img src={iconURL} className={styles.logo}></img>
+                    <img src={props.icon} className={styles.logo}></img>
         
                     <section className={styles.location}>
         
-                        <h3 className={styles.place}>{weather && weather.name}, <br></br>{weather.sys && weather.sys.country}</h3>
-                        <h2 className={styles.temperature}>{weather.main && weather.main.temp}º</h2>
+                        <h3 className={styles.place}>{props.weatherDisplay && props.weatherDisplay.name}, <br></br>{props.weatherDisplay.sys && props.weatherDisplay.sys.country}</h3>
+                        <h2 className={styles.temperature}>{props.weatherDisplay.main && props.weatherDisplay.main.temp}º</h2>
         
                     </section>   
                   
-                
-                    <Forecast />
 
             
         </main>
@@ -68,4 +41,4 @@ function CurrentWeather(props) {
 
 export default CurrentWeather;
 
-//{(e) => setSearchLocation(e.target.value)}
+//onChange={(e) => props.onChangeSearch (e.target.value)}
