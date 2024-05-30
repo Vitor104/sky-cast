@@ -1,11 +1,8 @@
 import React from "react";
 import styles from './forecast.module.css';
-import imageSun from '../sun.png';
-import imageStorm from '../storm.png';
-import imageCloudyandrain from '../cloudyandraining.png';
-import imageCloudy from '../cloudy.png';
 
-function Forecast() {
+
+function Forecast(props) {
     
    
 
@@ -13,25 +10,25 @@ function Forecast() {
         <div className={styles.container}>
             <section className={styles.forecastContainer}>
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={imageSun}></img>
+                    <img className={styles.weatherImage} src={props.iconURLUm && props.iconURLUm}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>
 
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={imageStorm}></img>
+                    <img className={styles.weatherImage} src={props.iconURLDois && props.iconURLDois}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>
 
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={imageCloudyandrain}></img>
+                    <img className={styles.weatherImage} src={props.iconURLTres && props.iconURLTres}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>
 
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={imageCloudy}></img>
+                    <img className={styles.weatherImage} src={props.iconURLQuatro && props.iconURLQuatro}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>

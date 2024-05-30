@@ -3,7 +3,7 @@ import styles from './App.module.css'
 import Search from '../Search/search';
 import CurrentWeather from '../CurrentWeather/currentweather';
 import Forecast from '../Forecast/forecast';
-import imageStorm from '../storm.png';
+
 
 function App() {
 
@@ -24,7 +24,9 @@ function App() {
   
   
   const [weather, setWeather] = useState({});
-  console.log(weather);
+
+  const [weatherForecast, setWeatherForecast] = useState({});
+  console.log(weatherForecast);
 
   const searchPressed = () => {
       fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
@@ -34,12 +36,33 @@ function App() {
       });
   };
 
+  const searchForecast = () => {
+    fetch(`${API.base}forecast?q=${searchLocation}&id&appid=${API.key}`)
+      .then(resFor => resFor.json())
+      .then(resultForecast => {
+          setWeatherForecast(resultForecast)
+      });
+  };
+
+  
+
   const icon = weather.weather && weather.weather[0].icon;
   const iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
+
+  const iconForecastOne = weatherForecast.weather && weatherForecast.weather[0].icon;
+  const iconForecastTwo = weatherForecast.weather && weatherForecast.weather[1].icon;
+  const iconForecastThree = weatherForecast.weather && weatherForecast.weather[2].icon;
+  const iconForecastFour = weatherForecast.weather && weatherForecast.weather[3].icon;
+
+  const iconURLUm = "http://openweathermap.org/img/w/" + iconForecastOne + ".png";
+  const iconURLDois = "http://openweathermap.org/img/w/" + iconForecastTwo + ".png";
+  const iconURLTres = "http://openweathermap.org/img/w/" + iconForecastThree + ".png";
+  const iconURLQuatro = "http://openweathermap.org/img/w/" + iconForecastFour + ".png";
 
 
   return (
     <div className="App">
+
       <CurrentWeather 
       buttonPressed={searchPressed} 
       searchL={searchLocation}
@@ -48,7 +71,17 @@ function App() {
       icon={iconURL}
       weatherDisplay={weather}
       />
-      <Forecast />
+
+      <Forecast 
+      searchForecast={searchForecast}
+      searchF={weatherForecast}
+      setSearchF={setWeatherForecast}
+      iconUm={iconURLUm}
+      iconDois={iconURLDois}
+      iconTres={iconURLTres}
+      iconQuatro={iconURLQuatro}
+      />
+
       </div>
   );
 }

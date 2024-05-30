@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from './currentweather.module.css';
-import imageSun from '../sun.png';
 import Search from "../Search/search";
 import Forecast from "../Forecast/forecast";
 
