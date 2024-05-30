@@ -29,20 +29,30 @@ function App() {
   console.log(weatherForecast);
 
   const searchPressed = () => {
-      fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
+      fetch(`${API.base}weather?q=${searchLocation}&dt={formattedDate}&units=metric&APPID=${API.key}`)
       .then(res => res.json())
       .then(result => {
+        console.log(result)
           setWeather(result)
       });
   };
 
+  
+if (searchPressed) {
   const searchForecast = () => {
-    fetch(`${API.base}forecast?q=${searchLocation}&id&appid=${API.key}`)
+    fetch(`${API.base}forecast?q=${searchPressed.result}&id&appid=${API.key}`)
       .then(resFor => resFor.json())
       .then(resultForecast => {
+        console.log(resultForecast)
           setWeatherForecast(resultForecast)
       });
   };
+  
+} else {
+  console.log('something goes wrong');
+}
+
+  
 
   
 
@@ -73,7 +83,7 @@ function App() {
       />
 
       <Forecast 
-      searchForecast={searchForecast}
+      
       searchF={weatherForecast}
       setSearchF={setWeatherForecast}
       iconUm={iconURLUm}
