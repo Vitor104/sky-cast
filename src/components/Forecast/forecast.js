@@ -7,6 +7,9 @@ function Forecast(props) {
    
 
     return (
+
+        
+
         <div className={styles.container}>
             <section className={styles.forecastContainer}>
                 <section className={styles.forecastModule}>
