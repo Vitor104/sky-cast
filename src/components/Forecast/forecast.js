@@ -11,32 +11,37 @@ function Forecast(props) {
         
 
         <div className={styles.container}>
-            <section className={styles.forecastContainer}>
+
+           
+                <section className={styles.forecastContainer}>
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={props.iconURLUm && props.iconURLUm}></img>
+                    <img className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>
 
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={props.iconURLDois && props.iconURLDois}></img>
+                    <img className={styles.weatherImage} src={props.iconDois && props.iconDois}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>
 
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={props.iconURLTres && props.iconURLTres}></img>
+                    <img className={styles.weatherImage} src={props.iconTres && props.iconTres}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>
 
                 <section className={styles.forecastModule}>
-                    <img className={styles.weatherImage} src={props.iconURLQuatro && props.iconURLQuatro}></img>
+                    <img className={styles.weatherImage} src={props.iconQuatro && props.iconQuatro}></img>
                     <p className={styles.hourandtemp}>01:00 pm</p>
                     <p className={styles.hourandtemp}>21º</p>
                 </section>
                 
             </section>
+            
+
+            
         </div>
     )
 }

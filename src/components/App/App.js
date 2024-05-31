@@ -28,19 +28,21 @@ function App() {
   const [weatherForecast, setWeatherForecast] = useState({});
   console.log(weatherForecast);
 
+
+    
+
   const searchPressed = () => {
       fetch(`${API.base}weather?q=${searchLocation}&dt={formattedDate}&units=metric&APPID=${API.key}`)
       .then(res => res.json())
       .then(result => {
-        console.log(result)
           setWeather(result)
       });
   };
 
   
-if (searchPressed) {
+
   const searchForecast = () => {
-    fetch(`${API.base}forecast?q=${searchPressed.result}&id&appid=${API.key}`)
+    fetch(`${API.base}forecast?q=${searchLocation}&id&appid=${API.key}`)
       .then(resFor => resFor.json())
       .then(resultForecast => {
         console.log(resultForecast)
@@ -48,9 +50,9 @@ if (searchPressed) {
       });
   };
   
-} else {
-  console.log('something goes wrong');
-}
+  const functionToCall = (searchPressed, searchForecast) => {
+      
+  }
 
   
 
@@ -59,10 +61,10 @@ if (searchPressed) {
   const icon = weather.weather && weather.weather[0].icon;
   const iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
 
-  const iconForecastOne = weatherForecast.weather && weatherForecast.weather[0].icon;
-  const iconForecastTwo = weatherForecast.weather && weatherForecast.weather[1].icon;
-  const iconForecastThree = weatherForecast.weather && weatherForecast.weather[2].icon;
-  const iconForecastFour = weatherForecast.weather && weatherForecast.weather[3].icon;
+  const iconForecastOne = weatherForecast.list && weatherForecast.list[0].weather[0].icon;
+  const iconForecastTwo = weatherForecast.list && weatherForecast.list[1].weather[0].icon;
+  const iconForecastThree = weatherForecast.list && weatherForecast.list[2].weather[0].icon;
+  const iconForecastFour = weatherForecast.list && weatherForecast.list[3].weather[0].icon;
 
   const iconURLUm = "http://openweathermap.org/img/w/" + iconForecastOne + ".png";
   const iconURLDois = "http://openweathermap.org/img/w/" + iconForecastTwo + ".png";
@@ -83,7 +85,8 @@ if (searchPressed) {
       />
 
       <Forecast 
-      
+      buttonPressed={searchPressed} 
+      searchForecast={searchForecast}
       searchF={weatherForecast}
       setSearchF={setWeatherForecast}
       iconUm={iconURLUm}
@@ -93,6 +96,7 @@ if (searchPressed) {
       />
 
       </div>
+
   );
 }
 
