@@ -31,16 +31,21 @@ function App() {
 
     
 
-  const searchPressed = () => {
+  
+  
+  
+    const searchPressed = () => {
       fetch(`${API.base}weather?q=${searchLocation}&dt={formattedDate}&units=metric&APPID=${API.key}`)
       .then(res => res.json())
       .then(result => {
           setWeather(result)
       });
-  };
+
+   };
 
   
 
+  
   const searchForecast = () => {
     fetch(`${API.base}forecast?q=${searchLocation}&id&appid=${API.key}`)
       .then(resFor => resFor.json())
@@ -49,10 +54,7 @@ function App() {
           setWeatherForecast(resultForecast)
       });
   };
-  
-  const functionToCall = (searchPressed, searchForecast) => {
-      
-  }
+
 
   
 
@@ -77,6 +79,7 @@ function App() {
 
       <CurrentWeather 
       buttonPressed={searchPressed} 
+      searchForecast={searchForecast}
       searchL={searchLocation}
       setSearchL={setSearchLocation}
       date={formattedDate}
