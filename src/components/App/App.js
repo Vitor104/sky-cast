@@ -3,6 +3,8 @@ import styles from './App.module.css'
 import Search from '../Search/search';
 import CurrentWeather from '../CurrentWeather/currentweather';
 import Forecast from '../Forecast/forecast';
+import Button from '../button/button';
+
 
 
 function App() {
@@ -104,22 +106,9 @@ function App() {
       weatherDisplay={weather}
       />
 
-<Forecast 
-      buttonPressed={searchPressed} 
-      searchForecast={searchForecast}
-      searchF={weatherForecast}
-      setSearchF={setWeatherForecast}
-      iconUm={iconURLUm}
-      iconDois={iconURLDois}
-      iconTres={iconURLTres}
-      iconQuatro={iconURLQuatro}
-      dayTxt={dayTxt}
-      dayTemp={dayTemp}
-      />
+      <Button forecast={Forecast} />
 
-
-      </div>
-
+    </div>
   );
 }
 
