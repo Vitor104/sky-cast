@@ -47,7 +47,7 @@ function App() {
 
   
   const searchForecast = () => {
-    fetch(`${API.base}forecast?q=${searchLocation}&id&appid=${API.key}`)
+    fetch(`${API.base}forecast?q=${searchLocation}&units=metric&id&appid=${API.key}`)
       .then(resFor => resFor.json())
       .then(resultForecast => {
         console.log(resultForecast)
@@ -63,6 +63,8 @@ function App() {
   const icon = weather.weather && weather.weather[0].icon;
   const iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
 
+  /* FORECAST   */
+
   const iconForecastOne = weatherForecast.list && weatherForecast.list[0].weather[0].icon;
   const iconForecastTwo = weatherForecast.list && weatherForecast.list[1].weather[0].icon;
   const iconForecastThree = weatherForecast.list && weatherForecast.list[2].weather[0].icon;
@@ -73,6 +75,21 @@ function App() {
   const iconURLTres = "http://openweathermap.org/img/w/" + iconForecastThree + ".png";
   const iconURLQuatro = "http://openweathermap.org/img/w/" + iconForecastFour + ".png";
 
+
+
+  let dayTxt = {
+    dayOne: weatherForecast.list && weatherForecast.list[0].dt_txt,
+    dayTwo: weatherForecast.list && weatherForecast.list[1].dt_txt,
+    dayThree: weatherForecast.list && weatherForecast.list[2].dt_txt,
+    dayFour: weatherForecast.list && weatherForecast.list[3].dt_txt,
+  }
+
+  let dayTemp = {
+    firstTemp: weatherForecast.list && weatherForecast.list[0].main.temp,
+    secondTemp: weatherForecast.list && weatherForecast.list[1].main.temp,
+    thirdTemp: weatherForecast.list && weatherForecast.list[2].main.temp,
+    fourthTemp: weatherForecast.list && weatherForecast.list[3].main.temp,
+  }
 
   return (
     <div className="App">
@@ -96,6 +113,8 @@ function App() {
       iconDois={iconURLDois}
       iconTres={iconURLTres}
       iconQuatro={iconURLQuatro}
+      dayTxt={dayTxt}
+      dayTemp={dayTemp}
       />
 
       </div>
