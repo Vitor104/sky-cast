@@ -104,7 +104,7 @@ function App() {
       weatherDisplay={weather}
       />
 
-      <Forecast 
+<Forecast 
       buttonPressed={searchPressed} 
       searchForecast={searchForecast}
       searchF={weatherForecast}
@@ -117,9 +117,27 @@ function App() {
       dayTemp={dayTemp}
       />
 
+
       </div>
 
   );
 }
 
 export default App;
+
+/*
+<Forecast 
+      buttonPressed={searchPressed} 
+      searchForecast={searchForecast}
+      searchF={weatherForecast}
+      setSearchF={setWeatherForecast}
+      iconUm={iconURLUm}
+      iconDois={iconURLDois}
+      iconTres={iconURLTres}
+      iconQuatro={iconURLQuatro}
+      dayTxt={dayTxt}
+      dayTemp={dayTemp}
+      />
+
+
+*/

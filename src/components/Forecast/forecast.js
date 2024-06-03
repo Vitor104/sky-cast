@@ -13,7 +13,9 @@ function Forecast(props) {
         <div className={styles.container}>
 
                 <button className="button" onClick={props.searchForecast}>click me</button>
-                <section className={styles.forecastContainer}>
+
+                
+                    <section className={styles.forecastContainer}>
                 <section className={styles.forecastModule}>
 
                     <img className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
@@ -43,11 +45,11 @@ function Forecast(props) {
                     <img className={styles.weatherImage} src={props.iconQuatro && props.iconQuatro}></img>
                     <p className={styles.hourandtemp}>{props.dayTxt.dayFour}</p>
                     <p className={styles.hourandtemp}>{props.dayTemp.fourthTemp}</p>
-                    
+
                 </section>
                 
             </section>
-            
+               
 
             
         </div>
