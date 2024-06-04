@@ -16,7 +16,7 @@ function App() {
   let formattedDate = currentDay + "-" + currentMonth + "-" + currentYear;
 
   const API = {
-      key: "99600cffaca177235cff252ce19ca928",
+      key: "ebf77221bcfcaac88788eccab128d91a",
       base: "https://api.openweathermap.org/data/2.5/",
     }
 
@@ -37,7 +37,7 @@ function App() {
   
   
     const searchPressed = () => {
-      fetch(`${API.base}weather?q=${searchLocation}&dt={formattedDate}&units=metric&APPID=${API.key}`)
+      fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
       .then(res => res.json())
       .then(result => {
           setWeather(result)
