@@ -16,7 +16,7 @@ function App() {
   let formattedDate = currentDay + "-" + currentMonth + "-" + currentYear;
 
   const API = {
-      key: "ebf77221bcfcaac88788eccab128d91a",
+      key: "99600cffaca177235cff252ce19ca928",
       base: "https://api.openweathermap.org/data/2.5/",
     }
 
