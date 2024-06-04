@@ -4,6 +4,11 @@ import Search from '../Search/search';
 import CurrentWeather from '../CurrentWeather/currentweather';
 import Forecast from '../Forecast/forecast';
 import Button from '../button/button';
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Link } from 'react-router-dom';
+import Root from '../Root/Root';
+
+
+
 
 
 
@@ -106,7 +111,20 @@ function App() {
       weatherDisplay={weather}
       />
 
-      <Button forecast={Forecast} />
+      <Button searchForecast={searchForecast}/>
+
+      <Forecast 
+      buttonPressed={searchPressed} 
+      searchForecast={searchForecast}
+      searchF={weatherForecast}
+      setSearchF={setWeatherForecast}
+      iconUm={iconURLUm}
+      iconDois={iconURLDois}
+      iconTres={iconURLTres}
+      iconQuatro={iconURLQuatro}
+      dayTxt={dayTxt}
+      dayTemp={dayTemp}
+      />
 
     </div>
   );
