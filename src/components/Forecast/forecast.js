@@ -4,18 +4,15 @@ import styles from './forecast.module.css';
 
 function Forecast(props) {
     
-   
+    
 
     return (
 
-        
-
-        <div className={styles.container}>
-
-                <button className="button" onClick={props.searchForecast}>click me</button>
+        <div className={styles.container}>                
 
                 
-                    <section className={styles.forecastContainer}>
+                <section className={styles.forecastContainer}>
+                <button className="button" onClick={props.searchForecast}>click me</button>
                 <section className={styles.forecastModule}>
 
                     <img className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>

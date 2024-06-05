@@ -18,6 +18,7 @@ function CurrentWeather(props) {
 
 
                     <Search buttonPressedSearch={props.buttonPressed} 
+                    searchFor={props.searchForecast}
                     onChange={(e) => setSearchL (e.target.value)} 
                     />
 

@@ -26,9 +26,10 @@ function App() {
   
   
   const [weather, setWeather] = useState({});
+  console.log(weather);
 
   const [weatherForecast, setWeatherForecast] = useState({});
-  console.log(weatherForecast);
+  
 
 
     
@@ -37,7 +38,7 @@ function App() {
   
   
     const searchPressed = () => {
-      fetch(`${API.base}weather?q=${searchLocation}&units=metric&APPID=${API.key}`)
+      fetch(`${API.base}weather?q=${searchLocation}&units=metric&id&APPID=${API.key}`)
       .then(res => res.json())
       .then(result => {
           setWeather(result)
@@ -106,7 +107,20 @@ function App() {
       weatherDisplay={weather}
       />
 
-      <Button forecast={Forecast} />
+      <Button buttonPressed={searchPressed} />
+      
+      <Forecast 
+      buttonPressed={searchPressed} 
+      searchForecast={searchForecast}
+      searchF={weatherForecast}
+      setSearchF={setWeatherForecast}
+      iconUm={iconURLUm}
+      iconDois={iconURLDois}
+      iconTres={iconURLTres}
+      iconQuatro={iconURLQuatro}
+      dayTxt={dayTxt}
+      dayTemp={dayTemp}
+      />
 
     </div>
   );
@@ -127,6 +141,6 @@ export default App;
       dayTxt={dayTxt}
       dayTemp={dayTemp}
       />
-
+<Button buttonPressed={searchPressed} />
 
 */
