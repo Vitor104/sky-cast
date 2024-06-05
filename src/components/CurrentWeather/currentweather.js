@@ -11,6 +11,8 @@ import Forecast from "../Forecast/forecast";
 function CurrentWeather(props) {
 
     const { searchL, setSearchL } = props;
+
+    const {show, setShow } = useState(props.icon);
     
 
     return (
@@ -23,13 +25,17 @@ function CurrentWeather(props) {
                     />
 
                     <p className={styles.todaydate}>{props.date}</p>
+
+                    {
+                        props.buttonPressed ? <img src={props.icon} className={styles.logo}></img> : console.log('erro')
+                    }
         
-                    <img src={props.icon} className={styles.logo}></img>
+                    
         
                     <section className={styles.location}>
         
                         <h3 className={styles.place}>{props.weatherDisplay && props.weatherDisplay.name}, <br></br>{props.weatherDisplay.sys && props.weatherDisplay.sys.country}</h3>
-                        <h2 className={styles.temperature}>{props.weatherDisplay.main && props.weatherDisplay.main.temp}º</h2>
+                        <h2 className={styles.temperature}>{props.weatherDisplay.main && props.weatherDisplay.main.temp}</h2>
         
                     </section>   
                   

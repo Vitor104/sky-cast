@@ -12,7 +12,6 @@ function Forecast(props) {
 
                 
                 <section className={styles.forecastContainer}>
-                <button className="button" onClick={props.searchForecast}>click me</button>
                 <section className={styles.forecastModule}>
 
                     <img className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>

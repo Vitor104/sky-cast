@@ -5,7 +5,8 @@ import CurrentWeather from "../CurrentWeather/currentweather";
 
 function Search (props) {
 
-    
+    let press = props.buttonPressedSearch;
+    let pressFor = props.searchFor;
     
     return (
         <div className={styles.searchmodule}>
@@ -26,7 +27,10 @@ function Search (props) {
                 <button 
                 className={styles.button} 
                 type="submit"
-                onClick={props.buttonPressedSearch}>Search</button>
+                onClick={() => {
+                    press()
+                    pressFor()
+                }}>Search</button>
 
             </section>
         </div>

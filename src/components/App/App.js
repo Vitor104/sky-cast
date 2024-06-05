@@ -44,13 +44,14 @@ function App() {
           setWeather(result)
       });
 
+       
    };
 
   
 
   
   const searchForecast = () => {
-    fetch(`${API.base}forecast?q=${searchLocation}&units=metric&id&appid=${API.key}`)
+    fetch(`${API.base}forecast?q=${searchLocation}&lang={pt_br}&units=metric&id&appid=${API.key}`)
       .then(resFor => resFor.json())
       .then(resultForecast => {
         console.log(resultForecast)
@@ -60,10 +61,11 @@ function App() {
 
 
   
-
+  
+  
   
 
-  const icon = weather.weather && weather.weather[0].icon;
+  const icon = weather.weather && weather.weather[0].icon; 
   const iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
 
   /* FORECAST   */
@@ -106,8 +108,6 @@ function App() {
       icon={iconURL}
       weatherDisplay={weather}
       />
-
-      <Button buttonPressed={searchPressed} />
       
       <Forecast 
       buttonPressed={searchPressed} 
