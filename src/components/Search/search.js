@@ -8,6 +8,7 @@ function Search (props) {
     let press = props.buttonPressedSearch;
     let pressFor = props.searchFor;
     
+    
     return (
         <div className={styles.searchmodule}>
             <article className={styles.logomodule}>
@@ -21,6 +22,7 @@ function Search (props) {
                 className={styles.inputField} 
                 placeholder="Search"
                 onChange={props.onChange}
+                onFoto={props.onChangeFoto}
                 >                    
                 </input>
 

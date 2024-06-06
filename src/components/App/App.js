@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './App.module.css'
 import Search from '../Search/search';
 import CurrentWeather from '../CurrentWeather/currentweather';
@@ -30,7 +30,7 @@ function App() {
 
   const [weatherForecast, setWeatherForecast] = useState({});
   
-
+  const [foto, setFoto] = useState(null);
 
     
 
@@ -44,7 +44,9 @@ function App() {
           setWeather(result)
       });
 
-      
+      let icon = weather.weather && weather.weather[0].icon; 
+      let teste = icon; 
+      setFoto("http://openweathermap.org/img/w/" + teste + ".png");
    };
 
   
@@ -61,14 +63,24 @@ function App() {
 
 
   
-  
     
-      let icon = weather.weather && weather.weather[0].icon; 
+      
+    console.log(foto);
+    
+      
+    
+    
+      //let icon = weather.weather && weather.weather[0].icon;      
+     // let iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
+    
+
       
       
-      let iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
+      
+
+
+      
     
-  
   
      
    
@@ -115,7 +127,8 @@ function App() {
       searchL={searchLocation}
       setSearchL={setSearchLocation}
       date={formattedDate}
-      icon={iconURL}
+      foto={foto}
+      setFoto={setFoto}
       weatherDisplay={weather}
       />
       

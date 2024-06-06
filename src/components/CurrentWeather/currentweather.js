@@ -12,7 +12,7 @@ function CurrentWeather(props) {
 
     const { searchL, setSearchL } = props;
 
-    
+   const {foto, setFoto} = props;
     
 
     return (
@@ -21,13 +21,16 @@ function CurrentWeather(props) {
 
                     <Search buttonPressedSearch={props.buttonPressed} 
                     searchFor={props.searchForecast}
-                    onChange={(e) => setSearchL (e.target.value)} 
+                    onChange={(e) => setSearchL (e.target.value)}
+                    onChangeFoto={(e) => setFoto (e.target.value)} 
                     />
 
                     <p className={styles.todaydate}>{props.date}</p>
 
+
+                    <img src={foto} className={styles.logo}></img> 
                     
-                    <img src={props.icon} className={styles.logo}></img>
+                    
                     
         
                     
