@@ -12,7 +12,7 @@ function CurrentWeather(props) {
 
     const { searchL, setSearchL } = props;
 
-    const {show, setShow } = useState(props.icon);
+    
     
 
     return (
@@ -26,9 +26,9 @@ function CurrentWeather(props) {
 
                     <p className={styles.todaydate}>{props.date}</p>
 
-                    {
-                        props.buttonPressed ? <img src={props.icon} className={styles.logo}></img> : console.log('erro')
-                    }
+                    
+                    <img src={props.icon} className={styles.logo}></img>
+                    
         
                     
         

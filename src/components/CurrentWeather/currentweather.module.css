@@ -16,7 +16,6 @@
 }
 
 .logo {
-    
     border: none;
 }
 
@@ -33,4 +32,12 @@
 
 .temperature {
     font-size: 30px;
+}
+
+.ispressed {
+    display: block;
+}
+
+.notpressed {
+    display: none;
 }
