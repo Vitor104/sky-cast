@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from './currentweather.module.css';
 import Search from "../Search/search";
 import Forecast from "../Forecast/forecast";
@@ -13,7 +13,9 @@ function CurrentWeather(props) {
     const { searchL, setSearchL } = props;
 
    const {foto, setFoto} = props;
-    
+    console.log(foto);
+        
+   
 
     return (
         <main className={styles.container}>      
@@ -27,8 +29,12 @@ function CurrentWeather(props) {
 
                     <p className={styles.todaydate}>{props.date}</p>
 
+                    {foto === 'http://openweathermap.org/img/w/undefined.png' ? null : <img src={foto} className={styles.logo}></img>                   
+                    }
 
-                    <img src={foto} className={styles.logo}></img> 
+
+
+                     
                     
                     
                     

@@ -45,8 +45,7 @@ function App() {
       });
 
       let icon = weather.weather && weather.weather[0].icon; 
-      let teste = icon; 
-      setFoto("http://openweathermap.org/img/w/" + teste + ".png");
+      setFoto("http://openweathermap.org/img/w/" + icon + ".png");
    };
 
   
