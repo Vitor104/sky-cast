@@ -9,11 +9,12 @@ function Forecast(props) {
     return (
 
         <div className={styles.container}>                
-
+                
                 
                 <section className={styles.forecastContainer}>
+                
                 <section className={styles.forecastModule}>
-
+                    
 
                     {props.iconUm === 'http://openweathermap.org/img/w/undefined.png' ? null : 
                     <img className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
