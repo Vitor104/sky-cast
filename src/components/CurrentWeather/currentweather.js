@@ -12,9 +12,7 @@ function CurrentWeather(props) {
 
     const { searchL, setSearchL } = props;
 
-   const {foto, setFoto} = props;
-    console.log(foto);
-        
+  
    
 
     return (
@@ -24,26 +22,20 @@ function CurrentWeather(props) {
                     <Search buttonPressedSearch={props.buttonPressed} 
                     searchFor={props.searchForecast}
                     onChange={(e) => setSearchL (e.target.value)}
-                    onChangeFoto={(e) => setFoto (e.target.value)} 
                     />
 
                     <p className={styles.todaydate}>{props.date}</p>
 
-                    {foto === 'http://openweathermap.org/img/w/undefined.png' ? null : <img src={foto} className={styles.logo}></img>                   
+                    {props.icon === 'http://openweathermap.org/img/w/undefined.png' ? null : 
+                    <img src={props.icon} className={styles.logo}></img>   
                     }
 
-
-
-                     
-                    
-                    
-                    
-        
-                    
+                                    
+                                                         
         
                     <section className={styles.location}>
         
-                        <h3 className={styles.place}>{props.weatherDisplay && props.weatherDisplay.name}, <br></br>{props.weatherDisplay.sys && props.weatherDisplay.sys.country}</h3>
+                        <h3 className={styles.place}>{props.weatherDisplay && props.weatherDisplay.name} <br></br>{props.weatherDisplay.sys && props.weatherDisplay.sys.country}</h3>
                         <h2 className={styles.temperature}>{props.weatherDisplay.main && props.weatherDisplay.main.temp}</h2>
         
                     </section>   

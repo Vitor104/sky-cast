@@ -26,15 +26,10 @@ function App() {
   
   
   const [weather, setWeather] = useState({});
-  console.log(weather);
+  
 
   const [weatherForecast, setWeatherForecast] = useState({});
-  
-  const [foto, setFoto] = useState(null);
-
-    
-
-  
+   
   
   
     const searchPressed = () => {
@@ -44,8 +39,6 @@ function App() {
           setWeather(result)
       });
 
-      let icon = weather.weather && weather.weather[0].icon; 
-      setFoto("http://openweathermap.org/img/w/" + icon + ".png");
    };
 
   
@@ -64,13 +57,13 @@ function App() {
   
     
       
-    console.log(foto);
+    
     
       
     
     
-      //let icon = weather.weather && weather.weather[0].icon;      
-     // let iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
+      let icon = weather.weather && weather.weather[0].icon;      
+      let iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
     
 
       
@@ -126,9 +119,8 @@ function App() {
       searchL={searchLocation}
       setSearchL={setSearchLocation}
       date={formattedDate}
-      foto={foto}
-      setFoto={setFoto}
       weatherDisplay={weather}
+      icon={iconURL}
       />
       
       <Forecast 

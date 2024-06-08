@@ -22,7 +22,6 @@ function Search (props) {
                 className={styles.inputField} 
                 placeholder="Search"
                 onChange={props.onChange}
-                onFoto={props.onChangeFoto}
                 >                    
                 </input>
 
