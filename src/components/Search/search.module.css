@@ -22,6 +22,14 @@
     border-radius: 10px;
 }
 
+.inputFieldModule {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+}
+
+
 .inputField {
     width: 10em;
     height: 2em;
@@ -40,13 +48,6 @@
     color: #D9DCDF;
 }
 
-.inputFieldModule {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    align-items: center;
-}
-
 .button {
     height: 2em;
     width: 5em;
@@ -56,4 +57,29 @@
 
 .inputField, .button:active {
     border: 1px solid rgb(0, 0, 0);
+}
+
+@media only screen and (min-width: 2400px) {
+    .searchmodule {
+        height: 14em;
+    }
+
+    .logomodule {
+        height: 10em;
+        width: 10em;
+    }
+
+    .logo {
+        height: 5em;
+        width: 5em;
+    }
+
+    .name {
+        font-size: 23px;
+    }
+
+    .inputField {
+        height: 5em;
+        width: 20em;
+    }
 }

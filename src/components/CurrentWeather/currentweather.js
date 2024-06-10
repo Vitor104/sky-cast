@@ -27,7 +27,7 @@ function CurrentWeather(props) {
                     <p className={styles.todaydate}>{props.date}</p>
 
                     {props.icon === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img src={props.icon} className={styles.logo}></img>   
+                    <img src={props.icon} className={styles.currentIcon}></img>   
                     }
 
                                     

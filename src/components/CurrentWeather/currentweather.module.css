@@ -15,7 +15,7 @@
     border-radius: 20px;
 }
 
-.logo {
+.currentIcon {
     border: none;
 }
 
@@ -34,10 +34,10 @@
     font-size: 30px;
 }
 
-.ispressed {
-    display: block;
+@media only screen and (min-width: 1024px) {
+    .currentIcon {
+        height: 5em;
+        width: 5em;
+    }
 }
 
-.notpressed {
-    display: none;
-}

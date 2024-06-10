@@ -111,7 +111,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={styles.App}>
 
       <CurrentWeather 
       buttonPressed={searchPressed} 
@@ -142,19 +142,3 @@ function App() {
 
 export default App;
 
-/*
-<Forecast 
-      buttonPressed={searchPressed} 
-      searchForecast={searchForecast}
-      searchF={weatherForecast}
-      setSearchF={setWeatherForecast}
-      iconUm={iconURLUm}
-      iconDois={iconURLDois}
-      iconTres={iconURLTres}
-      iconQuatro={iconURLQuatro}
-      dayTxt={dayTxt}
-      dayTemp={dayTemp}
-      />
-<Button buttonPressed={searchPressed} />
-
-*/
