@@ -24,6 +24,8 @@ function Search (props) {
                 onChange={props.onChange}
                 >                    
                 </input>
+                
+                
 
                 <button 
                 className={styles.button} 
