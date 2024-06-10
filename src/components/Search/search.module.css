@@ -41,6 +41,8 @@
 
 .logo {
     height: 2em;
+    animation-name: teste;
+    animation-duration: 2s;
 }
 
 .name {
@@ -88,3 +90,4 @@
         font-size: 20px;
     }
 }
+
