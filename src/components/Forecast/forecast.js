@@ -20,6 +20,7 @@ function Forecast(props) {
                     <img className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayOne}</p>
+                    <br></br>
                     <p className={styles.hourandtemp}>{props.dayTemp.firstTemp}</p>
 
                 </section>
@@ -31,6 +32,7 @@ function Forecast(props) {
                     <img className={styles.weatherImage} src={props.iconDois && props.iconDois}></img>
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayTwo}</p>
+                    <br></br>
                     <p className={styles.hourandtemp}>{props.dayTemp.secondTemp}</p>
 
                 </section>
@@ -42,6 +44,7 @@ function Forecast(props) {
                     <img className={styles.weatherImage} src={props.iconTres && props.iconTres}></img>
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayThree}</p>
+                    <br></br>
                     <p className={styles.hourandtemp}>{props.dayTemp.thirdTemp}</p>
 
                 </section>
@@ -52,7 +55,9 @@ function Forecast(props) {
                     {props.iconQuatro === 'http://openweathermap.org/img/w/undefined.png' ? null : 
                     <img className={styles.weatherImage} src={props.iconQuatro && props.iconQuatro}></img>
                     }
+                    
                     <p className={styles.hourandtemp}>{props.dayTxt.dayFour}</p>
+                    <br></br>
                     <p className={styles.hourandtemp}>{props.dayTemp.fourthTemp}</p>
 
                 </section>

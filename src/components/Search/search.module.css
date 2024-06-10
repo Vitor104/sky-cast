@@ -79,7 +79,12 @@
     }
 
     .inputField {
-        height: 5em;
-        width: 20em;
+        height: 2em;
+        width: 17em;
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 20px;
     }
 }
