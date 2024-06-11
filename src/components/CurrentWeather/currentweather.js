@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './currentweather.module.css';
 import Search from "../Search/search";
-import Forecast from "../Forecast/forecast";
+
 
 
 
@@ -48,4 +48,3 @@ function CurrentWeather(props) {
 
 export default CurrentWeather;
 
-//onChange={(e) => props.onChangeSearch (e.target.value)}

@@ -17,7 +17,7 @@ function Forecast(props) {
                     
 
                     {props.iconUm === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
+                    <img alt="weather icon" className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayOne}</p>
                     <br></br>
@@ -36,7 +36,7 @@ function Forecast(props) {
 
                     
                     {props.iconDois === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img className={styles.weatherImage} src={props.iconDois && props.iconDois}></img>
+                    <img alt="weather icon" className={styles.weatherImage} src={props.iconDois && props.iconDois}></img>
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayTwo}</p>
                     <br></br>
@@ -52,7 +52,7 @@ function Forecast(props) {
 
                     
                     {props.iconTres === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img className={styles.weatherImage} src={props.iconTres && props.iconTres}></img>
+                    <img alt="weather icon" className={styles.weatherImage} src={props.iconTres && props.iconTres}></img>
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayThree}</p>
                     <br></br>
@@ -68,7 +68,7 @@ function Forecast(props) {
 
                     
                     {props.iconQuatro === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img className={styles.weatherImage} src={props.iconQuatro && props.iconQuatro}></img>
+                    <img alt="weather icon" className={styles.weatherImage} src={props.iconQuatro && props.iconQuatro}></img>
                     }
                     
                     <p className={styles.hourandtemp}>{props.dayTxt.dayFour}</p>

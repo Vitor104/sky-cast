@@ -3,7 +3,7 @@ import styles from './App.module.css'
 import Search from '../Search/search';
 import CurrentWeather from '../CurrentWeather/currentweather';
 import Forecast from '../Forecast/forecast';
-import Button from '../button/button';
+
 
 
 
@@ -48,7 +48,6 @@ function App() {
     fetch(`${API.base}forecast?q=${searchLocation}&lang={pt_br}&units=metric&id&appid=${API.key}`)
       .then(resFor => resFor.json())
       .then(resultForecast => {
-        console.log(resultForecast)
           setWeatherForecast(resultForecast)
       });
   };
