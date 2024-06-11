@@ -7,10 +7,10 @@ function Forecast(props) {
     
 
     return (
-
+        
         <div className={styles.container}>                
                 
-                
+                <h2 className={styles.dailytitle}>Daily forecast</h2>
                 <section className={styles.forecastContainer}>
                 
                 <section className={styles.forecastModule}>
@@ -21,7 +21,14 @@ function Forecast(props) {
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayOne}</p>
                     <br></br>
-                    <p className={styles.hourandtemp}>{props.dayTemp.firstTemp}</p>
+                    
+
+                    {props.dayTemp.firstTemp === undefined ? '' : 
+                    <p className={styles.hourandtemp}>{props.dayTemp.firstTemp} º</p>
+                    }
+
+
+                    
 
                 </section>
 
@@ -33,7 +40,11 @@ function Forecast(props) {
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayTwo}</p>
                     <br></br>
-                    <p className={styles.hourandtemp}>{props.dayTemp.secondTemp}</p>
+                    {props.dayTemp.secondTemp === undefined ? '' : 
+                    <p className={styles.hourandtemp}>{props.dayTemp.secondTemp} º</p>
+                    }
+
+                    
 
                 </section>
 
@@ -45,7 +56,11 @@ function Forecast(props) {
                     }
                     <p className={styles.hourandtemp}>{props.dayTxt.dayThree}</p>
                     <br></br>
-                    <p className={styles.hourandtemp}>{props.dayTemp.thirdTemp}</p>
+                    {props.dayTemp.thirdTemp === undefined ? '' :
+                    <p className={styles.hourandtemp}>{props.dayTemp.thirdTemp} º</p>
+                    }
+
+                    
 
                 </section>
 
@@ -58,7 +73,10 @@ function Forecast(props) {
                     
                     <p className={styles.hourandtemp}>{props.dayTxt.dayFour}</p>
                     <br></br>
-                    <p className={styles.hourandtemp}>{props.dayTemp.fourthTemp}</p>
+                    {props.dayTemp.fourthTemp === undefined ? '' :
+                    <p className={styles.hourandtemp}>{props.dayTemp.fourthTemp} º</p>
+                    } 
+                    
 
                 </section>
                 

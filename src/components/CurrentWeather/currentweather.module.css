@@ -13,12 +13,11 @@
     background-color: #9CA48D;
     padding: 0.5em;
     border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .currentIcon {
     border: none;
-    animation-name: teste;
-    animation-duration: 4s;
 }
 
 .location {
@@ -26,6 +25,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .place {
@@ -67,9 +67,4 @@
     }
 }
 
-@keyframes teste {
-    0% {bottom: 0px;}
-    50% {bottom: 1em;}
-    100% {bottom: 5em;}
-}
 

@@ -1,7 +1,9 @@
 .container {
-    height: 10em;
+    height: 13em;
     width: 100%;
     display: flex;
+    gap: 2em;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -26,6 +28,7 @@
     justify-content: center;
     text-align: center;
     gap: 0.2em;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .weatherImage {
@@ -38,11 +41,16 @@
     font-size: 8px;
 }
 
+.dailytitle {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 
 
 @media only screen and (min-width: 1024px) {    
     .container {
-        height: 15em;
+        height: 20em;
     }
 
     .forecastContainer {

@@ -37,6 +37,7 @@
     background-color: #9CA48D;
     border-radius: 10px;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .logo {
@@ -46,8 +47,9 @@
 }
 
 .name {
-    font-size: 18px;
+    font-size: 17px;
     color: #D9DCDF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .button {
@@ -55,6 +57,7 @@
     width: 5em;
     border: none;
     border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .inputField, .button:active {
