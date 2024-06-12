@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState } from 'react';
 import styles from './App.module.css'
 import CurrentWeather from '../CurrentWeather/currentweather';
 import Forecast from '../Forecast/forecast';

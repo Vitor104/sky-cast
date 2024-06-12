@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from './currentweather.module.css';
 import Search from "../Search/search";
 
@@ -10,7 +10,7 @@ import Search from "../Search/search";
 
 function CurrentWeather(props) {
 
-    const { searchL, setSearchL } = props;
+    const { setSearchL } = props;
 
   
    
