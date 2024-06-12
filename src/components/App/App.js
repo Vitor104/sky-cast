@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import styles from './App.module.css'
-import Search from '../Search/search';
 import CurrentWeather from '../CurrentWeather/currentweather';
 import Forecast from '../Forecast/forecast';
 
