@@ -15,7 +15,7 @@ function Forecast(props) {
                 
                 <section className={styles.forecastModule}>
                     
-
+                    
                     {props.iconUm === 'http://openweathermap.org/img/w/undefined.png' ? null : 
                     <img alt="weather icon" className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
                     }
