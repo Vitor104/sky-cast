@@ -1,13 +1,12 @@
-/* src/components/CurrentWeather/currentweather.module.css */
 .weatherCard {
     text-align: center;
     width: 100%;
 }
 
 .location h2 {
-    font-size: clamp(1.5rem, 5vw, 2rem); /* Responsivo: min 1.5rem, ideal 5vw, max 2rem */
+    font-size: clamp(1.5rem, 5vw, 2rem); 
     margin-bottom: 5px;
-    word-wrap: break-word; /* Quebra o texto se o nome da cidade for muito longo */
+    word-wrap: break-word; 
 }
 
 .location p {
@@ -25,7 +24,6 @@
 }
 
 .temp {
-    /* Tamanho dinâmico: nunca menor que 3rem, nunca maior que 5rem */
     font-size: clamp(3rem, 12vw, 5rem); 
     font-weight: 700;
     text-shadow: 2px 2px rgba(0,0,0,0.1);
@@ -38,7 +36,7 @@
 }
 
 .iconContainer img {
-    width: 80px; /* Tamanho fixo para garantir consistência */
+    width: 80px; 
     height: 80px;
 }
 

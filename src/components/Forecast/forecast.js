@@ -1,4 +1,3 @@
-/* src/components/Forecast/forecast.js */
 import React from "react";
 import styles from './forecast.module.css';
 

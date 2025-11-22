@@ -1,4 +1,3 @@
-/* src/components/App/App.js */
 import React, { useState } from 'react';
 import styles from './App.module.css';
 import Search from '../Search/search';
@@ -29,13 +28,13 @@ function App() {
 
       if (weatherData.cod !== 200) throw new Error(weatherData.message);
 
-      // Busca Previsão (usando as coordenadas do resultado anterior para precisão)
+      // Busca Previsão 
       const { lat, lon } = weatherData.coord;
       const forecastRes = await fetch(`${api.base}forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${api.key}`);
       const forecastData = await forecastRes.json();
 
       setWeather(weatherData);
-      // Filtra para pegar apenas uma previsão por dia (a API retorna a cada 3h)
+      // Filtra para pegar apenas uma previsão por dia 
       const dailyForecast = forecastData.list.filter((reading) => reading.dt_txt.includes("12:00:00")).slice(0, 4);
       setForecast(dailyForecast);
 

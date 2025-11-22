@@ -1,4 +1,3 @@
-/* src/components/CurrentWeather/currentweather.js */
 import React from "react";
 import styles from './currentweather.module.css';
 

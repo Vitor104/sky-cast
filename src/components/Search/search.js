@@ -1,4 +1,3 @@
-/* src/components/Search/search.js */
 import React from "react";
 import styles from './search.module.css';
 
