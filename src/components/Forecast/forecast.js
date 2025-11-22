@@ -1,91 +1,26 @@
+/* src/components/Forecast/forecast.js */
 import React from "react";
 import styles from './forecast.module.css';
 
-
-function Forecast(props) {
-    
-    
-
+function Forecast({ data }) {
     return (
-        
-        <div className={styles.container}>                
-                
-                <h2 className={styles.dailytitle}>Daily forecast</h2>
-                <section className={styles.forecastContainer}>
-                
-                <section className={styles.forecastModule}>
-                    
-                    
-                    {props.iconUm === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img alt="weather icon" className={styles.weatherImage} src={props.iconUm && props.iconUm}></img>
-                    }
-                    <p className={styles.hourandtemp}>{props.dayTxt.dayOne}</p>
-                    <br></br>
-                    
-
-                    {props.dayTemp.firstTemp === undefined ? '' : 
-                    <p className={styles.hourandtemp}>{props.dayTemp.firstTemp} º</p>
-                    }
-
-
-                    
-
-                </section>
-
-                <section className={styles.forecastModule}>
-
-                    
-                    {props.iconDois === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img alt="weather icon" className={styles.weatherImage} src={props.iconDois && props.iconDois}></img>
-                    }
-                    <p className={styles.hourandtemp}>{props.dayTxt.dayTwo}</p>
-                    <br></br>
-                    {props.dayTemp.secondTemp === undefined ? '' : 
-                    <p className={styles.hourandtemp}>{props.dayTemp.secondTemp} º</p>
-                    }
-
-                    
-
-                </section>
-
-                <section className={styles.forecastModule}>
-
-                    
-                    {props.iconTres === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img alt="weather icon" className={styles.weatherImage} src={props.iconTres && props.iconTres}></img>
-                    }
-                    <p className={styles.hourandtemp}>{props.dayTxt.dayThree}</p>
-                    <br></br>
-                    {props.dayTemp.thirdTemp === undefined ? '' :
-                    <p className={styles.hourandtemp}>{props.dayTemp.thirdTemp} º</p>
-                    }
-
-                    
-
-                </section>
-
-                <section className={styles.forecastModule}>
-
-                    
-                    {props.iconQuatro === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img alt="weather icon" className={styles.weatherImage} src={props.iconQuatro && props.iconQuatro}></img>
-                    }
-                    
-                    <p className={styles.hourandtemp}>{props.dayTxt.dayFour}</p>
-                    <br></br>
-                    {props.dayTemp.fourthTemp === undefined ? '' :
-                    <p className={styles.hourandtemp}>{props.dayTemp.fourthTemp} º</p>
-                    } 
-                    
-
-                </section>
-                
-            </section>
-               
-
-            
+        <div className={styles.container}>
+            <h3>Próximos Dias</h3>
+            <div className={styles.list}>
+                {data.map((item, index) => (
+                    <div key={index} className={styles.dayCard}>
+                        <p className={styles.date}>
+                            {new Date(item.dt * 1000).toLocaleDateString('pt-BR', { weekday: 'short' })}
+                        </p>
+                        <img 
+                            src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`} 
+                            alt="icon" 
+                        />
+                        <p className={styles.temp}>{Math.round(item.main.temp)}°</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
-
 export default Forecast;

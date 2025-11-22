@@ -1,50 +1,32 @@
+/* src/components/CurrentWeather/currentweather.js */
 import React from "react";
 import styles from './currentweather.module.css';
-import Search from "../Search/search";
 
-
-
-
- 
-
-
-function CurrentWeather(props) {
-
-    const { setSearchL } = props;
-
-  
-   
+function CurrentWeather({ data }) {
+    const dateBuilder = (d) => {
+        let date = new Date();
+        return date.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
+    }
 
     return (
-        <main className={styles.container}>      
-
-
-                    <Search buttonPressedSearch={props.buttonPressed} 
-                    searchFor={props.searchForecast}
-                    onChange={(e) => setSearchL (e.target.value)}
+        <div className={styles.weatherCard}>
+            <div className={styles.location}>
+                <h2>{data.name}, {data.sys.country}</h2>
+                <p>{dateBuilder(new Date())}</p>
+            </div>
+            <div className={styles.mainData}>
+                <div className={styles.temp}>
+                    {Math.round(data.main.temp)}°c
+                </div>
+                <div className={styles.iconContainer}>
+                    <img 
+                        src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} 
+                        alt={data.weather[0].description} 
                     />
-
-                    <p className={styles.todaydate}>{props.date}</p>
-
-                    {props.icon === 'http://openweathermap.org/img/w/undefined.png' ? null : 
-                    <img alt="current weather icon" src={props.icon} className={styles.currentIcon}></img>   
-                    }
-
-                                    
-                                                         
-        
-                    <section className={styles.location}>
-        
-                        <h3 className={styles.place}>{props.weatherDisplay && props.weatherDisplay.name} <br></br>{props.weatherDisplay.sys && props.weatherDisplay.sys.country}</h3>
-                        <h2 className={styles.temperature}>{props.weatherDisplay.main && props.weatherDisplay.main.temp}</h2>
-        
-                    </section>   
-                  
-
-            
-        </main>
+                    <p>{data.weather[0].description}</p>
+                </div>
+            </div>
+        </div>
     )
 }
-
 export default CurrentWeather;
-

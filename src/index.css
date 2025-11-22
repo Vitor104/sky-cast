@@ -1,3 +1,12 @@
+/* src/index.css */
+:root {
+  --bg-gradient: linear-gradient(180deg, #4b90ff 0%, #ff5546 100%); /* Céu de entardecer */
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --text-primary: #ffffff;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +14,9 @@
 }
 
 body {
-  background-color: #0E5075;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif; /* Fonte moderna, importe no index.html se puder */
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

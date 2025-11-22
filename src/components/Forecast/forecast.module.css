@@ -1,90 +1,44 @@
 .container {
-    height: 13em;
     width: 100%;
+    margin-top: 20px;
+}
+
+.container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+}
+
+.list {
     display: flex;
-    gap: 2em;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dayCard {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    transition: transform 0.2s;
 }
 
-.forecastContainer {
-    height: 8em;
-    width: 17em;
-    background-color: #9CA48D;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 1em;
+.dayCard:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.forecastModule {
-    height: 5em;
-    width: 5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: 0.2em;
-    font-family: 'Times New Roman', Times, serif;
+.date {
+    font-size: 0.9rem;
+    text-transform: capitalize;
 }
 
-.weatherImage {
-    height: 2em;
-    width: 2em;
-    margin: 0 auto;
-}
-
-.hourandtemp {
-    font-size: 8px;
+.temp {
     font-weight: bold;
-}
-
-.dailytitle {
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-
-
-@media only screen and (min-width: 1024px) {    
-    .container {
-        height: 20em;
-    }
-
-    .forecastContainer {
-        height: 10em;
-        width: 20em;
-    }
-
-    .hourandtemp {
-        font-size: 12px;
-    }
-
-    .weatherImage {
-        height: 3em;
-        width: 3em;
-    }
-}
-
-@media only screen and (min-width: 2400px) {
-    .container {
-        height: 30em;
-    }
-
-    .forecastContainer {
-        height: 20em;
-        width: 60em;
-    }
-
-    .hourandtemp {
-        font-size: 20px;
-    }
-
-    .weatherImage {
-        height: 6em;
-        width: 6em;
-    }
+    font-size: 1.1rem;
 }
